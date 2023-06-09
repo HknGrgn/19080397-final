@@ -1,14 +1,14 @@
 ---
-title: "Title"
-author: 
-  - Last Name, First Name[^1]
+title: "Inequality in Girls' Education in Turkey"
+author:
+  - GURGUN, Hakan[^1]
 bibliography: ../bibliography/biblio.bib
 csl: ../csl/apa.csl
 header-includes:
   - \usepackage{polyglossia}
   - \setmainlanguage{english}
   - \usepackage{booktabs}
-  - \usepackage{caption} 
+  - \usepackage{caption}
   - \captionsetup[table]{skip=10pt}
 output:
   bookdown::pdf_document2:
@@ -25,100 +25,201 @@ urlcolor: blue
 fontsize: 12pt
 biblio-style: apalike
 abstract: |
-    Write your abstract here.
+   This abstract offers a summary of the differences in females' access to high-quality education in Turkey while highlighting the underlying causes. The analysis of the research shows that biases in educational policies, gender norms, early marriage, home obligations, and socioeconomic circumstances all have a substantial impact on how females are educated unequally in Turkey. The abstract also provides information on important variables, including population demographics, the number of children not enrolled in school, the number of years of education anticipated, and primary completion rates. Policymakers and stakeholders may create focused interventions to promote gender equality in education and guarantee inclusive and equitable access to high-quality education for all children in Turkey by recognizing the complex nature of girls' educational inequality.
 ---
+---
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(cache = FALSE, echo = TRUE, message = FALSE, warning = FALSE)
 ```
 
 <!-- ======================================================================= -->
+
 <!-- ============================== FOOTNOTES ============================== -->
+
 <!-- ======================================================================= -->
-[^1]: Student ID, [Github Repo](https://github.com/YOUR_USER_NAME_HERE/YOUR_REPO_NAME_HERE)
+[^1]: 19080397, [Github Repo](https://github.com/YOUR_USER_NAME_HERE/YOUR_REPO_NAME_HERE)
 
-# Important Information About Midterm
+# Introduction:
 
-\colorbox{BurntOrange}{WRITE YOUR GITHUB REPO LINK ON LINE 37 IN THIS FILE!}
-
-**Project Proposal submisson will be done by uploading a zip file to the ekampus system along with the Github repo link. If you do not upload a zip file to the system and do not provide a Github repo link, you will be deemed not to have entered the midterm and final exams.**
-
-**You must upload your project folder (`YourStudentID.zip` file) to *ekampus.ankara.edu.tr* until 9 June 2023, 23:59.**
-
-\colorbox{WildStrawberry}{Read the README.md file in the project folder for more information.}
-
-# Introduction
-This outline has been created to assist you in writing your project assignment. You should cite all the sources you use, articles, presentations, projects, etc. Quoting and referencing gives readers the opportunity to access the resources you refer. **Even though you use your own words, if you are conveying the ideas of others in your work, you have to document the source of these ideas. Otherwise, you are committing academic plagiarism.** For example, you can refer to @aydinonat:2007 for academic writing rules. You can find lots of online resources on this topic.
-
-The sections in your project assignment should definitely include the sections in this text. Apart from the sections used here, you can use different subsections. When writing your project, use this file as a draft and adapt its content to your purposes.
-
-In this section, mention the purpose and importance of your work in a few paragraphs.
+Education is a fundamental human right that is critical for personal development, economic empowerment, and social progress. However, in many parts of the world, including Turkey, girls continue to face significant challenges in accessing and participating in quality education. Despite progress made towards gender equality in education, girls' education inequality persists, influenced by various factors such as socio-economic status, gender norms, early marriage, domestic responsibilities, and biases in education policies.
 
 ## Literature Review
 
-In this section, discuss the articles you have read on the subject by giving references. This is a narrative citation @chang:2013. This one is a parenthetical citation [@chang:2013]. **Do not summarize each article individually under a separate title.** In the literature review section, **at least six** articles must be cited [@newbold:2003; @verzani:2014; @wickham:2014; @wooldridge:2015a].
+A review of the literature reveals the multifaceted nature of girls' education inequality in Turkey. Socio-economic factors play a crucial role in shaping access to education, with girls from low-income families facing higher risks of dropout, lower enrollment rates, and limited educational opportunities.[@tomul2008relative] Gender norms and societal expectations also contribute to girls' education inequality, as traditional roles and responsibilities often prioritize boys' education over girls', leading to disparities in educational attainment.[@ozaydinlik2014toplumsal]
+
+Early marriage, prevalent in some regions of Turkey, further exacerbates girls' education inequality, as it often results in early school dropout and limited educational opportunities.[@rankin2006gender] Domestic responsibilities, including household chores and caregiving responsibilities, also disproportionately affect girls, limiting their ability to attend school regularly and engage fully in their studies.[@tor2010turkiye]
+
+Biases in education policies and practices also contribute to girls' education inequality in Turkey.[@ccoker2020girls] Discrimination, gender biases, and stereotypes can impact girls' access to educational resources, opportunities, and decision-making processes, leading to disparities in educational outcomes.[@sayilan2012toplumsal]
 
 # Data
-In this section, discuss the source of the data set you use in your study, if you have done any operation on the raw data, these operations and the summary statistics about the data set. In this section, it is mandatory to have a table (Table \ref{tab:summary}) containing summary statistics (mean, standard deviation, minimum, maximum, etc. values) of all variables. Make the necessary references to your tables as shown in the previous sentence [@perkins:1991].
 
-R codes for the analysis should start in this section. In this section, you should include the codes that imports the data set into R and the codes that generate summary statistics.
+From 2014 to 2020, using the data in the dataset, a study on the inequality of girls' education in Turkey was conducted by examining the expected years of schooling of males and females and the general child population with the number of out-of-school children. I have 7 observations and 14 variables. I supported this research by using various graphical methods.
 
-```{r}
-library(tidyverse)
-library(here)
-survey <- read_csv(here("data/survey.csv"))
-```
+- **Out of School, M**: Refers to the number of out-of-school children who are male.
+- **Out of School**: Indicates the overall number of out-of-school children, irrespective of gender.
+- **Out of School, F**: Represents the number of out-of-school children who are female.
+- **Out of School, Percent**: Presents the percentage of children who are out of school in relation to the total population.
+- **Expected Years of Schooling**: Describes the average number of years individuals are projected to spend in formal education.
+- **Expected Years of Schooling, M**: Specifies the average number of years of formal education expected for males.
+- **Expected Years of Schooling, F**: Specifies the average number of years of formal education expected for females.
+- **Primary Completion Rate, M (%)**: Represents the percentage of males who complete primary education.
+- **Population Ages 0-14, M**: Indicates the population count of males within the age range of 0-14 years.
+- **Population Ages 05-09, F**: Represents the population count of females within the age range of 5-9 years.
+- **Population Ages 10-14, F**: Represents the population count of females within the age range of 10-14 years.
+- **Population Ages 10-14, M**: Represents the population count of males within the age range of 10-14 years.
+- **Population Ages 05-09, M**: Represents the population count of males within the age range of 5-9 years.
+- **Population Ages 0-14, Total**: Represents the total population count within the age range of 0-14 years.
 
-Note that code options are edited in some of the code chunks in the Rmd file.
+## Data Summary Statistics
+
+The information supplied offers insights into the number of children who are not enrolled in school, the average number of years spent in school, and population statistics for a certain demography. The number of years that men and women are expected to spend in school between 2014 and 2020 is on the rise. The whole population's predicted average number of school years ranges from 16.92 years in 2014 to 18.46 years in 2020. While the numbers for men grow from 17.39 years to 18.82 years, those for women see an increase from 16.44 years to 18.12 years in the average projected years of schooling.Even so, changes in the proportion of kids who are not enrolled in school show over time that access to education and enrollment rates vary. From 259,524 in 2014 to 310,864 in 2020, the number of children who are not enrolled in school is expected to increase. 4.78% to 5.85% of the population is made up of children who are not enrolled in school. It is crucial to note that the population aged 0-14 will have a small increase from 19,490,236 in 2014 to 19,954,033 in 2020. The importance of ongoing attempts to ensure equal access to education and address the issue of out-of-school children is highlighted by this information.
 
 ```{r, echo=FALSE}
-library(xtable) 
+library(tidyverse)
+library(here)
+library(readxl)
+data <- read_excel(here("data/data.xlsx"))
+```
+
+
+```{r, echo=FALSE}
+library(xtable)
 library(summarytools)
 st_options(lang = "en")
 ```
 
-With the `echo=FALSE` option, prevent the codes from appearing in the derived pdf file and report your results in tables.
 
 ```{r results='asis', echo=FALSE}
-survey %>%
-  select("sex", "credits", "handedness", "height", "handspan") %>% 
-  descr(stats = c("mean", "sd", "min", "med", "max"), transpose = TRUE) %>% 
+
+data %>%
+  select("out of school,  m", "out of school", "out of school,  f", "out of school, percent", "Expected years of schooling","Expected years of schooling,  m", "Expected years of schooling,  f", "Population ages 0-14,  total") %>%
+  descr(stats = c("mean", "sd", "min", "med", "max"), transpose = TRUE) %>%
   xtable(caption = "Summary Statistics",
          label = "tab:summary",
-         align = c("l", "c", "c", "c", "c", "c")) %>% 
+         align = c("l", "c", "c", "c", "c", "c")) %>%
   print(booktabs = TRUE, comment = FALSE, caption.placement = "top")
+
 ```
 
 
 # Methods and Data Analysis
-In this section describe the methods that you use to achieve the purpose of the study. You should use the appropriate analysis methods (such as hypothesis tests and correlation analysis) that we covered in the class. If you want, you can also use other methods that we haven't covered. If you think some method is more suitable for the purpose of the analysis and the data set, you can use that method [@newbold:2003; @verzani:2014; @wickham:2014; @wooldridge:2015a].
 
-For example, if you are performing regression analysis, discuss your predicted equation in this section. Write your equations and mathematical expressions using $LaTeX$.
+## Unveiling Fluctuations in Out-of-School Children: Turkey's Education Analysis 2014-2020
 
-$$
-Y_t = \beta_0 + \beta_N N_t + \beta_P P_t + \beta_I I_t + \varepsilon_t
-$$
+The "Number of Out-of-School Children" bar graph (figure 1) analyzes the number of out-of-school children in Turkey from 2014 to 2020. The graph shows variations in the proportion of out-of-school kids, demonstrating a dynamic environment within the time period under study.
 
-This section should also include different tables and plots. You can add histograms, scatter plots (such as Figure \@ref(fig:plot)), box plots, etc. Make the necessary references to your figures as shown in the previous sentence.
+The number of kids who are not in school reaches a significant peak in 2016, indicating a particular occasion or set of circumstances that contributed to the rise. However, it is difficult to pinpoint the precise cause without more background.Our comprehension of current trends is constrained by the lack of information for the years 2021 and 2022. The shifting number of out-of-school children has significant ramifications for Turkey's educational policies and social programs, though.
+
+A comprehensive strategy is needed to address this problem, taking into account elements like socioeconomic circumstances, gender inequity, geographic constraints, and access to educational resources. The results highlight the necessity for ongoing efforts to ensure that everyone has access to high-quality education and the significance of identifying and removing obstacles that prevent kids from enrolling in school.Turkey can work toward providing education for all of its children and ensuring a more prosperous future by putting inclusive and equitable educational methods into place.
 
 
-```{r plot, fig.align='center', fig.cap='An Awesome Plot'}
-survey %>% 
-  ggplot(aes(x = handedness, y = handspan)) +
-  geom_point() +
-  geom_smooth() +
-  scale_x_continuous("Handedness") + 
-  scale_y_continuous("Handspan")
+```{r, echo=FALSE, fig.width=10, fig.height=6}
+data <- head(data, -2)
+
+
+data$`out of school` <- as.numeric(gsub(",", ".", data$`out of school`))
+
+
+ggplot(data, aes(x = Time, y = `out of school`)) +
+  geom_bar(stat = "identity", fill = "steelblue") +
+  labs(title = "Number of Out-of-School Children",
+       x = "Year", y = "Numbers") +
+  scale_y_continuous(labels = scales::comma)  
+
 ```
+
+**figure 1**
+
+## Unveiling the Dynamics of Out-of-School Children in Turkey: Analyzing Trends from 2014 to 2020
+
+The number of out-of-school children in Turkey from 2014 to 2020 is shown (figure 2) graphically in the "Number of Out-of-School Children" graph. The y-axis shows the number of students who are not enrolled in school, while the x-axis shows the corresponding years.
+
+Several conclusions can be drawn after carefully examining the graph. First off, there is no discernible pattern in the proportion of out-of-school kids during the studied time. Although there are significant oscillations in the graph, there is no obvious upward or downward trend over time. Instead, it appears that the count varies from year to year.
+
+When compared to the years before it, 2016 saw a considerable increase in the number of youngsters who were not in school. This could point to a particular occurrence or set of circumstances that caused a brief rise in the number of kids skipping school. However, it is difficult to pinpoint the precise source of this surge in the absence of other details.
+
+The changes in the number of students who are not enrolled in school often imply that a number of reasons may be at play. These elements can include Turkey's cultural dynamics, educational regulations, social and economic conditions, and access to education.
+
+It is significant to notice that because the y-axis scale is hidden, the graph does not show absolute values for the number of children who are not in school. As a result, judging the size of the problem merely on the graph is challenging.
+
+Furthermore, the analysis's thoroughness is constrained by the lack of data for the years 2021 and 2022. These omitted years could be able to provide light on any current patterns or developments involving Turkish youngsters who are not in school.
+
+The graph, which depicts the number of children not enrolled in school in Turkey from 2014 to 2020, shows swings but no discernible overall trend. Additional analysis and contextual data are required to determine cause and effect correlations and to get a better understanding of the variables affecting these values.
+
+```{r, echo=FALSE, fig.width=10, fig.height=6}
+
+data$`Primary completion rate, m (%)` <- as.numeric(gsub(",", ".", data$`Primary completion rate, m (%)`))
+
+ggplot(data, aes(x = `Expected years of schooling`, y = `Primary completion rate, m (%)`)) +
+  geom_point(color = "steelblue") +
+  geom_text(aes(label = Time), vjust = -1) +
+  labs(title = "Primary Completion Rate vs Expected Years of Schooling",
+       x = "Expected Years of Schooling", y = "Primary Completion Rate (%)")
+
+
+```
+
+**figure 2**
+
+## Narrowing the Gap: A Comparative Analysis of Expected Years of Schooling for Men and Women in 2014-2020
+
+The "Expected Years of Schooling: Male vs. Female" graph (figure 3) compares the average number of years that men and women in a particular demographic are projected to spend in school from 2014 to 2020. The y-axis shows the anticipated number of years spent in school, and the x-axis shows the corresponding number of years.
+
+When we examine the graph, we see two lines: one represents the number of years of education that men should expect to complete (in blue), and the other represents women (in red). Both lines exhibit an increasing trend, which denotes an overall rise in the anticipated number of years spent in school for both sexes during the studied period.
+
+Males have continuously had more years of schooling expected of them from 2014 to 2020 than girls. The difference between the two has, however, been rapidly closing. In 2014, men were expected to complete 17.39 years of schooling, and women were expected to complete 16.44 years of education. The anticipated number of years in education rose to about 18.80 for men and 18.12 for women by 2020.
+
+The graph shows an improvement in education as both genders have seen an increase in the number of years they intend to spend in school. This indicates advancement in giving both genders equal access to educational possibilities. However, the ongoing disparity between men and women suggests that additional initiatives could be required to guarantee gender equity in access to education.
+
+It's important to note that the graph only shows the anticipated number of years spent in school and excludes data on enrollment or graduation rates. To have a full perspective of the educational landscape for men and women in the given demographic, it is crucial to take additional aspects into account, such as educational quality, dropout rates, and impediments to education.
+
+In conclusion, the graph shows an increase in both male and female predicted years of schooling from 2014 to 2020. Despite the fact that there has been progress, gender inequality in education still has to be achieved, as seen by the gender gap.
+
+```{r, echo=FALSE, fig.width=10, fig.height=6}
+
+library(ggplot2)
+
+
+data <- data.frame(
+  Year = c(2014, 2015, 2016, 2017, 2018, 2019, 2020),
+  Expected_Schooling_Male = c(17.39, 17.86, 18.27, 18.67, 18.70, 18.82, 18.80),
+  Expected_Schooling_Female = c(16.44, 16.78, 17.13, 17.29, 17.61, 17.86, 18.12)
+)
+
+
+ggplot(data, aes(x = Year)) +
+  geom_line(aes(y = Expected_Schooling_Male, color = "Male"), size = 1.5) +
+  geom_line(aes(y = Expected_Schooling_Female, color = "Female"), size = 1.5) +
+  labs(title = "Expected Years of Schooling: Male vs Female",
+       x = "Year",
+       y = "Expected Years of Schooling") +
+  scale_color_manual(values = c("blue", "red")) +
+  theme_minimal()
+
+
+
+```
+
+**figure 3**
+
+
+## Prediction
+
+The formula shows a regression model that predicts the number of children who are not enrolled in school based on factors like the proportion of boys and girls who are not enrolled in school as well as the anticipated number of years that each gender will spend in school. The link between these variables and the number of children not in school is determined by the coefficients in the equation.
+
+$$
+Out of school = \beta_0 + \beta_1 \text{out of school m} + \beta_2 \text{out of school f} + \beta_3  \text{Expected years m} + \beta_4 \text{Expected years f} + \varepsilon
+$$
+
+
 
 
 # Conclusion
-Summarize the results of your analysis in this section. Discuss to what extent your results responded to the research question you identified at the beginning and how this work could be improved in the future.
 
-**References section is created automatically by Rmarkdown. There is no need to change the references section in the draft file.**
-
-**_You shouldn't delete the last 3 lines. Those lines are required for References section._**
+In summary, the study of girls' educational disparity in Turkey demonstrates enduring barriers to obtaining a top-notch education. Disparities in educational chances and outcomes for girls are caused by socioeconomic variables, gender norms, early marriage, household duties, and biases in educational policies. In spite of initiatives to advance gender equality, focused interventions and policy changes are required to deal with these underlying problems. The information in the table emphasizes significant indices of girls' educational inequality, highlighting both the disparities that still persist and the progress that has been made. Enhancing girls' access to education, challenging gender norms, preventing early marriage, and ensuring equitable opportunity for all children are all essential for achieving Sustainable Development Goal 4 and guaranteeing inclusive and high-quality education for all. Turkey can establish an inclusive and fair society that empowers people and contributes to overall development and prosperity by emphasizing girls' education and putting comprehensive strategies into place. To remove obstacles and foster a conducive environment for girls' education in Turkey, cooperation between policymakers, educators, and stakeholders is crucial. 
 
 \newpage
+
 # References {#references}
 <div id="refs"></div>
-
